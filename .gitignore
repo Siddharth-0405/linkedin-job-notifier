@@ -1,0 +1,9 @@
+.env
+jobs.json
+seen_jobs.json
+notifier.log
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
