@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Job Radar — Data Engineer</title>
+<title>Job Radar — LinkedIn Job Notifier</title>
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -539,7 +539,7 @@
         <div class="logo-icon">📡</div>
         <div class="logo-text">
           <h1>Job Radar</h1>
-          <span>Data Engineer Monitor</span>
+          <span>Job Monitor</span>
         </div>
       </div>
       <div class="status-pill">
@@ -612,7 +612,7 @@
     <!-- Jobs rendered here -->
   </div>
 
-  <footer>JOB RADAR v1.0 — FOR PERSONAL USE ONLY — CHECK LINKEDIN ToS BEFORE DEPLOYING</footer>
+  <footer>JOB RADAR v1.0 — Built by Siddharth — FOR PERSONAL USE ONLY — CHECK LINKEDIN ToS</footer>
 </div>
 
 <div id="toast"></div>
@@ -643,13 +643,13 @@
     const now = new Date();
     const ago = (h) => new Date(now - h * 3600000).toISOString();
     return [
-      { id: 'demo1', title: 'Senior Data Engineer', company: 'Flipkart', location: 'Bengaluru, India', link: 'https://www.linkedin.com/jobs/', posted: ago(1), found_at: ago(0.5), applied: false },
+      { id: 'demo1', title: 'Data Engineer', company: 'Flipkart', location: 'Bengaluru, India', link: 'https://www.linkedin.com/jobs/', posted: ago(1), found_at: ago(0.5), applied: false },
       { id: 'demo2', title: 'Data Engineer — Azure', company: 'Infosys', location: 'Bengaluru, India', link: 'https://www.linkedin.com/jobs/', posted: ago(2), found_at: ago(1.5), applied: false },
-      { id: 'demo3', title: 'Data Engineer (Spark / Databricks)', company: 'TCS', location: 'Hyderabad, India', link: 'https://www.linkedin.com/jobs/', posted: ago(3), found_at: ago(2), applied: false },
-      { id: 'demo4', title: 'Lead Data Engineer', company: 'Walmart Global Tech', location: 'Bengaluru, India', link: 'https://www.linkedin.com/jobs/', posted: ago(5), found_at: ago(4), applied: true },
-      { id: 'demo5', title: 'Data Engineer — AWS', company: 'Accenture', location: 'Mumbai, India', link: 'https://www.linkedin.com/jobs/', posted: ago(8), found_at: ago(7), applied: false },
+      { id: 'demo3', title: 'Software Engineer', company: 'TCS', location: 'Hyderabad, India', link: 'https://www.linkedin.com/jobs/', posted: ago(3), found_at: ago(2), applied: false },
+      { id: 'demo4', title: 'Data Engineer (Spark)', company: 'Walmart Global Tech', location: 'Bengaluru, India', link: 'https://www.linkedin.com/jobs/', posted: ago(5), found_at: ago(4), applied: false },
+      { id: 'demo5', title: 'Software Engineer — Backend', company: 'Accenture', location: 'Hyderabad, India', link: 'https://www.linkedin.com/jobs/', posted: ago(8), found_at: ago(7), applied: false },
     ];
-  }
+}
 
   // ── Render ─────────────────────────────────────────────────────────────────
   function renderAll() {
