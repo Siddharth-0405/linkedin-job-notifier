@@ -114,3 +114,13 @@ To change the posting recency, find this line in `job_notifier.py`:
 # Add to crontab to run on system boot
 @reboot cd /path/to/job-notifier && python job_notifier.py >> notifier.log 2>&1 &
 ```
+
+# ⚠️ Disclaimer
+This tool is for personal use only.
+Use responsibly and in accordance with LinkedIn's Terms of Service.
+
+## 🤝 Contributing
+Pull requests are welcome!
+
+## ⭐ If this helped you
+Give it a star on GitHub!
