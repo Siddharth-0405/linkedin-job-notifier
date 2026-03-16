@@ -1,5 +1,4 @@
-# 📡 LinkedIn Job Radar — Data Engineer
-
+# 📡 LinkedIn Job Radar 
 Monitors LinkedIn for Data Engineer openings every 15 minutes and notifies you instantly so you can apply before competition piles up.
 
 ---
