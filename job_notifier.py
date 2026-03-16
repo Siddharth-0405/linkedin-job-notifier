@@ -1,6 +1,9 @@
 """
 LinkedIn Job Notifier + One-Click Opener
 =========================================
+Author: Siddharth (github.com/Siddharth-0405)
+License: MIT
+
 All settings are controlled via the .env file.
 No code editing needed — just configure .env!
 
@@ -49,15 +52,15 @@ CONFIG = {
     # ── What jobs to search ────────────────────────────────────────────────────
     # .env: JOB_KEYWORDS=Data Engineer,Software Engineer,Data Analyst
     "keywords_list": parse_list(
-        os.getenv("JOB_KEYWORDS", "Data Engineer,Software Engineer"),
-        ["Data Engineer", "Software Engineer"]
+        os.getenv("JOB_KEYWORDS", ""),
+        []
     ),
 
     # Use pipe | to separate locations (city names already have commas)
     # .env: JOB_LOCATIONS=Bengaluru, India|Hyderabad, India|Mumbai, India|Remote
     "locations_list": parse_pipe_list(
-        os.getenv("JOB_LOCATIONS", "Bengaluru, India|Hyderabad, India"),
-        ["Bengaluru, India", "Hyderabad, India"]
+        os.getenv("JOB_LOCATIONS", ""),
+        []
     ),
 
     # .env: EASY_APPLY_ONLY=true  (true = only Easy Apply jobs, false = all jobs)
@@ -298,6 +301,18 @@ def check_for_new_jobs():
 
 # ── Entry Point ───────────────────────────────────────────────────────────────
 def main():
+
+    # ── Validate config first ──────────────────────────────
+    if not CONFIG["keywords_list"]:
+        log.error("❌ JOB_KEYWORDS not set in .env! Please configure it.")
+        log.error("   Example: JOB_KEYWORDS=Data Engineer,Software Engineer")
+        return
+    if not CONFIG["locations_list"]:
+        log.error("❌ JOB_LOCATIONS not set in .env! Please configure it.")
+        log.error("   Example: JOB_LOCATIONS=Bengaluru, India|Hyderabad, India")
+        return
+
+    #----Startup Logs----------------------------------------------
     log.info("=" * 60)
     log.info("  LinkedIn Job Notifier")
     log.info(f"  Roles      : {', '.join(CONFIG['keywords_list'])}")
